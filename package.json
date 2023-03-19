@@ -1,0 +1,32 @@
+{
+  "name": "cy-cucumber",
+  "version": "2.0.0",
+  "description": "Cypress Cucumber Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shahnka-Koththagoda/Cy-Cucumber-Framwork.git"
+  },
+  "author": "ShankaKoththagoda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shahnka-Koththagoda/Cy-Cucumber-Framwork/issues"
+  },
+  "homepage": "https://github.com/Shahnka-Koththagoda/Cy-Cucumber-Framwork#readme",
+  "devDependencies": {
+    "cypress": "^12.8.1",
+    "@cucumber/cucumber": "^9.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "./cypress/support/step_definitions/stepDef.cy.js"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.5"
+  }
+}
