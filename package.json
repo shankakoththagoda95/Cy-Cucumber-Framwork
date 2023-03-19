@@ -17,10 +17,14 @@
   },
   "homepage": "https://github.com/Shahnka-Koththagoda/Cy-Cucumber-Framwork#readme",
   "devDependencies": {
-    "cypress": "^12.8.1",
-    "@cucumber/cucumber": "^9.0.1",
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.5",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "@badeball/cypress-cucumber-preprocessor": "^15.1.5"
+    "@cucumber/cucumber": "^9.0.1",
+    "@cypress/webpack-preprocessor": "^5.17.0",
+    "cypress": "^12.8.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.2"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
