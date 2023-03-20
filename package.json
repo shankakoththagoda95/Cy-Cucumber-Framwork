@@ -4,7 +4,12 @@
   "description": "Cypress Cucumber Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "delete:reports": "rm cypress/results/* || true",
+    "prereport": "npm run delete:reports",
+    "report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
+    "cy:open_private": "npx cypress open --env username=$QAUSERNAME,password=$QAPASSWORD",
+    "mochaawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
+    "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml"
   },
   "repository": {
     "type": "git",
@@ -22,6 +27,11 @@
     "@cucumber/cucumber": "^9.0.1",
     "@cypress/webpack-preprocessor": "^5.17.0",
     "cypress": "^12.8.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "mocha-junit-reporter": "^2.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.2",
     "webpack": "^5.76.2"

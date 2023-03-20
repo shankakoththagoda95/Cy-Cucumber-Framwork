@@ -7,6 +7,13 @@ const createEsbuildPlugin =
   require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
 
 module.exports = defineConfig({
+  viewportHeight: 1080,
+  viewportWidth:  1920,
+  video: false,
+  retries: {
+    runMode:2,     //Headless Mode
+    openMode:0,    //UI Mode
+  },
   e2e: {
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
@@ -17,5 +24,9 @@ module.exports = defineConfig({
       return config;
     },
     specPattern:'cypress/e2e/feature/test/*',
+  },
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    configFile: 'reporter-config.json',
   },
 });
